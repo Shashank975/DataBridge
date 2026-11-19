@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #1e293b;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 245px;
+    background: #111827;
+    color: white;
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 25px;
+    margin-bottom: 45px;
+}
+
+.logo span {
+    color: #60a5fa;
+}
+
+.menu-label {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #cbd5e1;
+    padding: 13px;
+    border-radius: 7px;
+}
+
+nav a:hover,
+nav a.active {
+    background: #2563eb;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+.sidebar-bottom small {
+    color: #94a3b8;
+}
+
+/* Main content */
+
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    min-width: 0;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.topbar h3 {
+    font-size: 20px;
+}
+
+.topbar p,
+.section-heading p,
+.activity-section p {
+    color: #64748b;
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.user-profile {
+    background: #dbeafe;
+    color: #1d4ed8;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Welcome section */
+
+.welcome-section {
+    background: #1d4ed8;
+    color: white;
+    padding: 35px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+}
+
+.welcome-section h1 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.welcome-section p {
+    color: #dbeafe;
+}
+
+/* Connectors */
+
+.section {
+    margin-bottom: 35px;
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    font-size: 20px;
+}
+
+.connector-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.connector-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.connector-card.available {
+    border-color: #93c5fd;
+}
+
+.connector-icon {
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.connector-card h3 {
+    margin-bottom: 10px;
+}
+
+.connector-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+    min-height: 42px;
+}
+
+.status {
+    display: inline-block;
+    font-size: 12px;
+    margin: 15px 0;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.available-status {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.upcoming-status {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+button:disabled {
+    background: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Upload section */
+
+.activity-section,
+.upload-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.upload-section p {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.upload-box {
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    padding: 35px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.upload-box input {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive layout */
+
+@media (max-width: 750px) {
+    .sidebar {
+        width: 180px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .connector-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    body {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .welcome-section h1 {
+        font-size: 22px;
+    }
+}
